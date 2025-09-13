@@ -1,0 +1,77 @@
+const todo = require("../model/todo"); // make sure todoModel.js exists in models folder
+
+// CREATE
+const createToDo = async (req, res) => {
+  const { message } = req.body;
+
+  if (!message || message.trim() === "") {
+    return res.status(400).json({ errorMessage: "Message cannot be empty" });
+  }
+
+  // validation: check if message length is valid
+  if (message.length < 4 || message.length > 20) {
+    return res
+      .status(400)
+      .json({ errorMessage: "Message must be between 4 and 20 characters." });
+  }
+
+  try {
+    const addToDo = await todo.create({ message });
+    res.status(201).json({ success: "created", data: addToDo });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+// READ (Get all todos)
+const getAllToDo = async (req, res) => {
+  try {
+    const getToDo = await todo.find({});
+    res.status(200).json({ data: getToDo });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+// DELETE
+const deleteToDo = async (req, res) => {
+  try {
+    const deleted = await todo.findByIdAndDelete(req.params.id);
+    if (!deleted) {
+      return res.status(404).json({ error: "Todo not found" });
+    }
+    res.status(200).json({ success: "deleted", data: deleted });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+// UPDATE
+const updateToDo = async (req, res) => {
+  try {
+    const updated = await todo.findByIdAndUpdate(
+      req.params.id,
+      { message: req.body.message },
+      { new: true } // return updated document
+    );
+
+    if (!updated) {
+      return res.status(404).json({ error: "Todo not found" });
+    }
+
+    res.status(200).json({ success: "updated", data: updated });
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({ error: error.message });
+  }
+};
+
+module.exports = {
+  createToDo,
+  getAllToDo,
+  updateToDo,
+  deleteToDo,
+};
