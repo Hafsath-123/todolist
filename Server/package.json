@@ -11,8 +11,8 @@
   "version": "1.0.0",
   "main": "Index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
+    "dev":"nodemon Index.js",
+    "start":"node Index.js"
   },
   "keywords": [],
   "author": "",
