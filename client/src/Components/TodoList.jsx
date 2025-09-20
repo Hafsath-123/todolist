@@ -1,18 +1,18 @@
 import { AiFillDelete } from "react-icons/ai"; 
 import { AiTwotoneEdit } from "react-icons/ai"; 
-import {useEffect,
-useState,} from 'react'
 import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { toast } from "react-toastify";
 
 
 const TodoList = () => {
     const [todos, setTodos] = useState([])
-    const [isEditing, setEditing] = useState(false)
+    const [isEditing, setIsEditing] = useState(false)
     const [currentTodo, setCurrentTodo] = useState({ _id: null, message: '' })
 
     const getAllTodos = async () => {
         try {
-            const response = await axios.get('https://localhost:5000/todolist/getall');
+            const response = await axios.get('http://localhost:5000/todolist/getall')
             setTodos(response.data.data);
         } catch (error) {
             console.log(error);
@@ -20,7 +20,6 @@ const TodoList = () => {
     };
     useEffect(() => {
         getAllTodos();
-        console.log('this run once when components mounts')
     }, []);
 
     // the useEffect hook is an essential part of this react component.
@@ -30,9 +29,9 @@ const TodoList = () => {
 
     const handleDelete = async (id) => {
         try {
-            const result = await axios.delete(`http://localhost:5000/todolist/deleteTodo/$(id`);
+            const result = await axios.delete(`http://localhost:5000/todolist/deleteTodo/${id}`);
             if (result.data.success === 'deleted') {
-                to.success('todo delete successfully')
+                toast.success('todo delete successfully')
                 getAllTodos();
 
             }
@@ -69,7 +68,7 @@ const TodoList = () => {
 
         }
         try {
-            const result = await axios.put(`http://localhost:5000/todolist/updateTodos/${currentTodo._id}`, {
+            const result = await axios.put(`http://localhost:5000/todolist/updateToDo/${currentTodo._id}`, {
                 message: currentTodo.message
             });
             if (result.data.success === 'updated') {

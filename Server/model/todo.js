@@ -8,5 +8,5 @@ const todoSchema=new mongoose.Schema({
         maxLength:20
     }
 })
-const Todo=mongoose.model('todo',todoSchema)
-module.exports=Todo
+const todo=mongoose.model('todo',todoSchema)
+module.exports=todo

@@ -1,5 +1,5 @@
 const express=require('express')
-const { getAllToDo, createToDo, updateToDo, deleteToDo } = require('../controller/todoCtrl')
+const { getAllToDo, createToDo,deleteToDo, updatedTodo } = require('../controller/todoCtrl')
 
 const todoRouter=express.Router()
 
@@ -10,7 +10,7 @@ const todoRouter=express.Router()
 
 todoRouter.get('/getall',getAllToDo)
 todoRouter.post('/',createToDo)
-todoRouter.put('/updateTodo/:id',updateToDo)
+todoRouter.put('/updateToDo/:id', updatedTodo)
 todoRouter.delete('/deleteToDo/:id',deleteToDo)
 
 

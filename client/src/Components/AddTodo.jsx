@@ -1,9 +1,10 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import './AddToDo.css'
+import './AddToDo.css';
+import{toast}from 'react-toastify';
 
 const AddTodo = () => {
-    const[message,setMessage]=useState('')
+    const[message,setMessage]=useState('');
     const createToDo=async()=>{
     // validate message
     if(message===''){
@@ -15,10 +16,10 @@ const AddTodo = () => {
         return;
     }
     try{
-        const response=await axios.post('http://localhost:5000/todolist',{
+        const response=await axios.post('http://localhost:5000/todolist/',{
             message:message,
         });
-        if (response.data.syccess=='created'){
+        if (response.data.success==='created'){
             window.location.reload();
         }
 
