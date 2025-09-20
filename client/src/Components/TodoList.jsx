@@ -12,7 +12,7 @@ const TodoList = () => {
 
     const getAllTodos = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/todolist/getall')
+            const response = await axios.get('https://todolist-bcknd.onrender.com/todolist/getall')
             setTodos(response.data.data);
         } catch (error) {
             console.log(error);
@@ -29,7 +29,7 @@ const TodoList = () => {
 
     const handleDelete = async (id) => {
         try {
-            const result = await axios.delete(`http://localhost:5000/todolist/deleteTodo/${id}`);
+            const result = await axios.delete(`https://todolist-bcknd.onrender.com/todolist/deleteTodo/${id}`);
             if (result.data.success === 'deleted') {
                 toast.success('todo delete successfully')
                 getAllTodos();
@@ -68,7 +68,7 @@ const TodoList = () => {
 
         }
         try {
-            const result = await axios.put(`http://localhost:5000/todolist/updateToDo/${currentTodo._id}`, {
+            const result = await axios.put(`https://todolist-bcknd.onrender.com/todolist/updateToDo/${currentTodo._id}`, {
                 message: currentTodo.message
             });
             if (result.data.success === 'updated') {

@@ -16,7 +16,7 @@ const AddTodo = () => {
         return;
     }
     try{
-        const response=await axios.post('http://localhost:5000/todolist/',{
+        const response=await axios.post('https://todolist-bcknd.onrender.com/todolist/',{
             message:message,
         });
         if (response.data.success==='created'){
