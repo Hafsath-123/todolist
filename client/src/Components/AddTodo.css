@@ -5,7 +5,7 @@
     min-height: 100px;
     display: flex;
     gap: 15px;
-    background-color: rgb(48, 3, 246);
+    background-color: rgb(169, 209, 146);
     align-items: center;
     justify-content: center;
     border-radius: 15px;
@@ -22,17 +22,16 @@ input {
     height: 45px;
     padding: 12px 20px;
     border-radius: 10px;
-    background: linear-gradient(to right, rgb(236, 162, 106), rgb(229, 146, 160));
+    background: linear-gradient(to right, rgb(148, 166, 186), rgb(241, 228, 230));
     font-size: 16px;
     font-weight: 500;
     transition: all 0.3s ease;
-    flex: 1;
 }
 
 input:focus {
     outline: none;
-    border-color: #ff6b6b;
-    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+    border-color: #6bffe4;
+    box-shadow: 0 0 10px rgba(184, 103, 103, 0.3);
     transform: scale(1.02);
 }
 
@@ -46,7 +45,7 @@ input::placeholder {
     width: 150px;
     padding: 12px;
     border-radius: 9px;
-    background-color: lightsalmon;
+    background-color: rgb(63, 98, 56);
     border: none;
     height: 45px;
     cursor: pointer;
@@ -55,7 +54,6 @@ input::placeholder {
     font-size: 16px;
     color: #000;
     box-shadow: 0 4px 15px rgba(255, 160, 122, 0.3);
-    flex-shrink: 0;
 }
 
 .btn:hover {
@@ -82,7 +80,7 @@ input::placeholder {
     background-clip: text;
 }
 
-/* 📱 Tablet (768px and below) */
+/* 📱 Tablet Responsive adjustments */
 @media (max-width: 768px) {
     .container {
         width: 85%;
@@ -92,7 +90,14 @@ input::placeholder {
         margin-top: 8%;
     }
 
-    input, .btn {
+    input {
+        width: 90%;
+        min-width: auto;
+        font-size: 15px;
+        height: 42px;
+    }
+
+    .btn {
         width: 90%;
         height: 45px;
         font-size: 15px;
@@ -104,92 +109,88 @@ input::placeholder {
     }
 }
 
-/* 📱 Mobile (480px and below) */
+/* 📱 Mobile (Smartphones) */
 @media (max-width: 480px) {
     .container {
-        width: 95%;
-        margin-top: 10%;
+        width: 90%;
+        margin-top: 12%;
         padding: 15px;
-        flex-direction: column;
-        align-items: stretch;
         gap: 12px;
+        flex-direction: column;
     }
 
-    input, .btn {
+    input {
+        width: 100%;
+        height: 42px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .btn {
         width: 100%;
         height: 42px;
         font-size: 14px;
-        min-width: auto;
     }
 
     .h1 {
-        font-size: 22px;
-        margin-top: 20px;
+        font-size: 24px;
+        margin-top: 18px;
+        padding: 0 8px;
     }
 }
 
-/* 📱 Small Phones (360px and below) */
-@media (max-width: 360px) {
+/* 📱 Small smartphones (below 400px width) */
+@media (max-width: 400px) {
     .container {
-        width: 96%;
+        width: 95%;
+        margin-top: 18%;
         padding: 12px;
         gap: 10px;
     }
 
-    input, .btn {
+    input {
+        height: 38px;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .btn {
         height: 40px;
         font-size: 13px;
     }
 
     .h1 {
-        font-size: 20px;
+        font-size: 22px;
         margin-top: 15px;
     }
 }
 
-/* 📱 Very Small Phones (320px and below) */
-@media (max-width: 320px) {
-    .container {
-        width: 98%;
-        padding: 10px;
-    }
-
-    input, .btn {
-        height: 38px;
-        font-size: 12.5px;
-    }
-
-    .h1 {
-        font-size: 18px;
-    }
-}
-
-/* 🖥️ Large Desktop (1200px and above) */
+/* 🖥️ Large Desktop */
 @media (min-width: 1200px) {
     .container {
         width: 60%;
         margin-top: 3%;
     }
-
+    
     input {
         width: 65%;
         height: 50px;
         font-size: 18px;
     }
-
+    
     .btn {
         width: 160px;
         height: 50px;
         font-size: 17px;
     }
-
+    
     .h1 {
         font-size: 36px;
         margin-top: 40px;
     }
 }
 
-/* 🧩 Extra: Prevent horizontal scrolling */
+/* 🚫 Prevent horizontal scroll */
 html, body {
     overflow-x: hidden;
 }
