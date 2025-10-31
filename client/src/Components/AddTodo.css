@@ -1,42 +1,189 @@
-input{
-    border: 2px solid black;
-    width: 300px;
-    height: 30px;
-    padding: 15px;
-    border-radius: 10px;
-    background:linear-gradient(to right,rgb(236, 162, 106),rgb(229, 146, 160));
-    margin-left: 350px;
-    
-
-}
-.container{
+/* 🩷 Main container */
+.container {
     width: 70%;
-    margin-top: 20%;
-    height: 100px;
-    display:flex;
-   margin-left: 10%;
-   gap: 2px;
-   background-color: rgb(48, 3, 246);
-   align-items: center;
-   border-radius: 15px;
-   
-
+    margin: 5% auto 0;
+    min-height: 100px;
+    display: flex;
+    gap: 15px;
+    background-color: rgb(169, 209, 146);
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 25px;
+    flex-wrap: wrap; /* allows items to move on small screens */
+    box-shadow: 0 8px 25px rgba(48, 3, 246, 0.3);
 }
-.h1{
-   margin-left: 25%;
-   color: burlywood;
-   position: absolute;
-   align-items: center;
-   margin-top: 20px;
-   margin-left: 20%;
 
-   
+/* 🧡 Input box */
+input {
+    border: 2px solid black;
+    width: 60%;
+    min-width: 220px;
+    height: 45px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgb(148, 166, 186), rgb(241, 228, 230));
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
-.btn{
-    width: 140px;
-    padding: 10px;
+
+input:focus {
+    outline: none;
+    border-color: #6bffe4;
+    box-shadow: 0 0 10px rgba(184, 103, 103, 0.3);
+    transform: scale(1.02);
+}
+
+input::placeholder {
+    color: #5a5a5a;
+    font-weight: 400;
+}
+
+/* 💜 Button */
+.btn {
+    width: 150px;
+    padding: 12px;
     border-radius: 9px;
-    background-color:lightsalmon;
-    height: 63px;
-   
+    background-color: rgb(63, 98, 56);
+    border: none;
+    height: 45px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: #000;
+    box-shadow: 0 4px 15px rgba(255, 160, 122, 0.3);
+}
+
+.btn:hover {
+    background-color: rgb(255, 160, 122);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 160, 122, 0.4);
+}
+
+.btn:active {
+    transform: scale(1.02);
+}
+
+/* 💛 Heading */
+.h1 {
+    text-align: center;
+    color: burlywood;
+    margin-top: 30px;
+    font-size: 32px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, burlywood, #f5d6a3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 📱 Tablet Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 85%;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        margin-top: 8%;
+    }
+
+    input {
+        width: 90%;
+        min-width: auto;
+        font-size: 15px;
+        height: 42px;
+    }
+
+    .btn {
+        width: 90%;
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .h1 {
+        font-size: 28px;
+        margin-top: 25px;
+    }
+}
+
+/* 📱 Mobile Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        width: 92%;
+        margin-top: 12%;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    input {
+        width: 100%;
+        height: 40px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 100%;
+        height: 42px;
+        font-size: 14px;
+    }
+
+    .h1 {
+        font-size: 24px;
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+}
+
+/* 📱 Small Mobile Responsive adjustments */
+@media (max-width: 360px) {
+    .container {
+        width: 95%;
+        margin-top: 15%;
+        padding: 12px;
+    }
+
+    input {
+        height: 38px;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .btn {
+        height: 40px;
+        font-size: 13px;
+    }
+
+    .h1 {
+        font-size: 22px;
+        margin-top: 15px;
+    }
+}
+
+/* 🖥️ Large Desktop adjustments */
+@media (min-width: 1200px) {
+    .container {
+        width: 60%;
+        margin-top: 3%;
+    }
+    
+    input {
+        width: 65%;
+        height: 50px;
+        font-size: 18px;
+    }
+    
+    .btn {
+        width: 160px;
+        height: 50px;
+        font-size: 17px;
+    }
+    
+    .h1 {
+        font-size: 36px;
+        margin-top: 40px;
+    }
 }
