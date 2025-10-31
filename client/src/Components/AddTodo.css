@@ -5,7 +5,7 @@
     min-height: 100px;
     display: flex;
     gap: 15px;
-    background-color: rgb(169, 209, 146);
+    background-color: rgb(48, 3, 246);
     align-items: center;
     justify-content: center;
     border-radius: 15px;
@@ -22,7 +22,7 @@ input {
     height: 45px;
     padding: 12px 20px;
     border-radius: 10px;
-    background: linear-gradient(to right, rgb(148, 166, 186), rgb(241, 228, 230));
+    background: linear-gradient(to right, rgb(236, 162, 106), rgb(229, 146, 160));
     font-size: 16px;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -30,8 +30,8 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #6bffe4;
-    box-shadow: 0 0 10px rgba(184, 103, 103, 0.3);
+    border-color: #ff6b6b;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
     transform: scale(1.02);
 }
 
@@ -45,7 +45,7 @@ input::placeholder {
     width: 150px;
     padding: 12px;
     border-radius: 9px;
-    background-color: rgb(63, 98, 56);
+    background-color: lightsalmon;
     border: none;
     height: 45px;
     cursor: pointer;
